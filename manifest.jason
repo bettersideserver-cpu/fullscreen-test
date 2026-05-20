@@ -1,0 +1,8 @@
+{
+  "name": "BetterSide",
+  "short_name": "BetterSide",
+  "start_url": "/",
+  "display": "fullscreen",
+  "background_color": "#000000",
+  "theme_color": "#000000"
+}
