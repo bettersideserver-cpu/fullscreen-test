@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fullscreen Window</title>
+
+  <style>
+    html, body {
+      margin: 0;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      background: black;
+    }
+
+    .container{
+      width:100vw;
+      height:100vh;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      color:white;
+      font-size:40px;
+      font-family:Arial;
+    }
+
+    button{
+      padding:15px 30px;
+      font-size:20px;
+      cursor:pointer;
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <button id="fullscreenBtn">Open Fullscreen</button>
+</div>
+
+<script>
+  const btn = document.getElementById("fullscreenBtn");
+
+  btn.addEventListener("click", async () => {
+    if (document.documentElement.requestFullscreen) {
+      await document.documentElement.requestFullscreen();
+    }
+
+    // Try resize window
+    window.moveTo(0, 0);
+    window.resizeTo(screen.width, screen.height);
+  });
+</script>
+
+</body>
+</html>
